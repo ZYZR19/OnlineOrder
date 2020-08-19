@@ -10,9 +10,9 @@ import java.sql.SQLException;
 
 //本质上是一个管理单例的DataSource的类
 public class DBUtil {
-    private  static  final String URL = "jdbc:mysql://127.0.0.1:3306/onlineorder?characterEncoding=utf-8&useSSL=true";
+    private  static  final String URL = "jdbc:mysql://127.0.0.1:3306/onlineorder?characterEncoding=utf-8&useUnicode=true";
     private  static  final String USERNAME ="root";
-    private  static  final String password=" ";
+    private  static  final String password="";
 
     private  static  volatile DataSource dataSource = null;
     public static  DataSource getDataSource () {
