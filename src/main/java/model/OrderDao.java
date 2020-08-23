@@ -16,6 +16,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class OrderDao {
@@ -296,6 +297,13 @@ public class OrderDao {
         }finally {
             DBUtil.close(connection,statement,null);
         }
+
+    }
+
+    public static void main(String[] args) {
+        OrderDao orderDao = new OrderDao();
+       List<Order> orders = new ArrayList<>();
+       orders = orderDao.selectAll();
 
     }
 }

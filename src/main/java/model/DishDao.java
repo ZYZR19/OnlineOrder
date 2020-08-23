@@ -145,13 +145,13 @@ public class DishDao {
         dishDao.add(dish2);*/
 
         //2,测试查找所有
-        /*List<Dish> dishes= dishDao.selectAll();
+        List<Dish> dishes= dishDao.selectAll();
         System.out.println("查看所有");
         System.out.println(dishes);
 
         Dish dish = dishDao.selectById(1);
         System.out.println("查看指定");
-        System.out.println(dish);*/
+        System.out.println(dish);
 
         dishDao.delete(1);
         System.out.println("删除成功"

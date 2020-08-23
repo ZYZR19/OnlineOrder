@@ -100,9 +100,12 @@ public class OrderServlet extends HttpServlet {
 
             }
             OrderDao orderDao = new OrderDao();
-            List<Order> orders = null;
+            String orderIdstr = req.getParameter("orderId");
+            if (orderIdstr == null) {
 
-            if(user.getIsAdmin()==0) {
+                List<Order> orders = null;
+
+                if(user.getIsAdmin()==0) {
                     orders = orderDao.selectByUserId(user.getUserId());
                 }else{
                     orders = orderDao.selectAll();//查看所有
@@ -110,14 +113,25 @@ public class OrderServlet extends HttpServlet {
 
                 String jsonString= gson.toJson(orders);
                 resp.getWriter().write(jsonString);
+            }else {
+                //查找指定订单
+                int orderId = Integer.parseInt(orderIdstr);
+                Order order = orderDao.selectById(orderId);
 
-        } catch (OrderSystemException e) {
+                String jsonString= gson.toJson(order);
+                resp.getWriter().write(jsonString);
+            }
+            } catch (OrderSystemException e) {
             response.ok = 0;
             response.reason = e.getMessage();
             String jsonString = gson.toJson(response);
             resp.getWriter().write(jsonString);
         }
     }
+
+
+
+
 
 
     //修改订单状态
