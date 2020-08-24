@@ -254,6 +254,7 @@
 <script src="https://dlweb.sogoucdn.com/common/lib/jquery/jquery-1.11.0.min.js"></script>
 
 <script>
+
     let app = new Vue({
         el: '#app',
         data: {
@@ -431,7 +432,7 @@
                 return count;
             },
             selectedDishPrice() {
-                let price = 0;
+                let price = 0.00;
                 Array.from(this.dishes).forEach(dish => {
                     if (dish.isSelected) {
                         price += dish.price;

@@ -36,4 +36,4 @@ foreign key (dishId) references  dishes (dishId)
 );
 
 alter table user drop name;
-alter table user add ;
+
