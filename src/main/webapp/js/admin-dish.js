@@ -13,7 +13,7 @@ var app = new Vue({
         // 当前的菜品列表
         dishes: [
             // {
-            //     dishId: 1,
+            //     dish Id: 1,
             //     name: '京酱肉丝',
             //     price: 2000,
             //     isSelected: null,
